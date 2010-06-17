@@ -18,16 +18,10 @@ inducing word representations over a corpus, using random indexing
 (a specific application of random projection).
 
 WARNING:
-    * This is random access to an RNG. Instead of using a pseudo-RNG as
-    such (which might be slow), or caching the random matrix (which might
-    take a lot of memory), we use hashing to provide no-memory random
-    access to random numbers. I can't promise that this hashing provides
-    "strong" random numbers.
-
-    * We use Murmur, a Python-wrapped C implementation of murmurhash. This
-    is probably not the latest or most bugfixed implementation of
-    MurmurHash 2.0.
-
+    * Read warnings in common.gaussian and common.deterministicrandom:
+        http://github.com/turian/common/blob/master/gaussian.py
+        http://github.com/turian/common/blob/master/deterministicrandom.py
+    that indicate potential issues with the RNG and hash function.
 
 TODO:
     Need test suite to make sure that values are consistent across
@@ -37,7 +31,12 @@ REQUIREMENTS:
     * numpy
         Output is put in a (dense) numpy vector
 
-    * Murmur:
-        easy_install murmur
-        http://pypi.python.org/pypi/Murmur/
-        Provides fast murmur hashes for strings, files, and ziped files.
+    * My python common library:
+        http://github.com/turian/common
+
+        which in turn will require:
+
+        * Murmur:
+            easy_install murmur
+            http://pypi.python.org/pypi/Murmur/
+            Provides fast murmur hashes for strings, files, and ziped files.
