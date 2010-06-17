@@ -1,0 +1,18 @@
+pyrandomprojection
+------------------
+
+    by Joseph Turian
+
+Random projection library for Python, converting a dictionary to
+low-dimensional numpy matrix
+
+"Random projection is a simple geometric technique for reducing
+the dimensionality of a set of points in Euclidean space while
+preserving pairwise distances approximately" -Santosh Vempala
+<http://www-math.mit.edu/~vempala/rp.html>
+
+See also:
+    http://github.com/turian/random-indexing-wordrepresentations
+A more end-to-end package (rather than drop-in function) for specifically
+inducing word representations over a corpus, using random indexing
+(a specific application of random projection).
