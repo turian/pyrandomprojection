@@ -1,7 +1,16 @@
 #!/usr/bin/python
 """
 Random projection library for Python, converting a dictionary to
-low-dimensional numpy vector
+low-dimensional numpy vector.
+
+NOTE: The runtime is typically bounded by the number of calls to
+randomrow. If you have a single instance, simply call project() on it. If
+you have a list of instances, you shouldn't just call project on each
+instance, because that will be #nonzeros * randomrow calls. Instead,
+iterate over the columns (i.e. iterate feature-major order, not
+instance-major order), so you only do one randomrow op per feature
+type. There is example code that does this here:
+    http://github.com/glorotxa/DeepANN/blob/master/exp_scripts/randomprojection.py
 """
 
 #import math
